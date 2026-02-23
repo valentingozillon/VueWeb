@@ -1,5 +1,5 @@
 <template> 
-    <h1>À propos</h1>
+    <h1 style="font-family: Arial, Helvetica, sans-serif;">À propos</h1>
     <div class="content">
         <h2 class="title">résentation courte</h2>
         <img src="../assets/valentin.jpg" class="pics"/>

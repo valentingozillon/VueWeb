@@ -1,27 +1,14 @@
 <template> 
-    <div>
+    <div v-if="repo">
         <h1 class="title">Github API</h1>
         <div style="display: flex;">
-            <div class="descri">
-                <h2 class="name" v-if="repo" style="padding-top: 25px;">  Nom du repo :{{ repo.name }} </h2>
-                <h2 class="name" v-if="repo"> Pseudo du dev: {{ repo.owner.login }} </h2>
-                <h2 class="name" v-if="repo"> Description: {{ repo.description }} </h2>
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Language</th>
-                                <th>Utilisation</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="(value, lang) in langs" :key="lang">
-                                <td> {{ lang }} </td>
-                                <td> {{  value }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div style="width: 50%;">
+                <div class="descri">
+                    <h2 class="name" v-if="repo" style="padding-top: 25px;">  Nom du repo :{{ repo.name }} </h2>
+                    <h2 class="name" v-if="repo"> Pseudo du dev: {{ repo.owner.login }} </h2>
+                    <h2 class="name" v-if="repo"> Description: {{ repo.description }} </h2>
                 </div>
+                <Chart v-if="chartData" type="doughnut" :data="chartData" class="doug"/>
             </div>
             <div class="push">
                 <h1>Dernier push</h1>
@@ -32,19 +19,41 @@
 
 <script>
 import axios from 'axios';
+import Lang from '../assets/lang.json'
+import Repo from '../assets/repo.json'
+import Com from '../assets/commit.json'
+import Chart from 'primevue/chart';
 
 export default {
     name: 'Git-api',
     props: {
         url: String
     },
+    components: {
+        Chart,
+    },
     data() {
         return {
-            repo: null,
-            langs: null,
+            repo: Repo,
+            langs: Lang,
+            com: Com,
+            chartData: null,
         };
     },
-    created: function() {
+    computed: {
+        chartData() {
+            if (!this.langs) return null
+
+            return {
+                labels: Object.keys(this.langs),
+                datasets: [{
+                    label: 'Utilisation',
+                    data: Object.values(this.langs)
+                }]
+            }
+        }
+    },
+    /*created: function() {
         axios.get(this.url).then((result) => {
             this.repo = result.data
         }).catch((err) => {
@@ -55,7 +64,7 @@ export default {
         }).catch((err) => {
             console.log(err)
         });
-    },
+    },*/
 }
 </script>
 
@@ -71,7 +80,7 @@ export default {
     background-color: #CE6A6B;
     padding-left: 7%;
     padding-bottom: 50px;
-    width: 33%;
+    width: 86%;
     margin-left: 5%;
     border-radius: 25px;
 }
@@ -85,51 +94,11 @@ export default {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-table {
-  border-collapse: collapse;
-  width: 30%;
-}
-
-td, th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #EBACA2;
-}
-
-tr:nth-child(odd) {
-    background-color: #CE6A6B;
-}
-
-tr:hover {
-    background-color: #ddd;
-}
-
-th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #212E53;
-  color: white;
+.doug {
+    margin-top: 25px;
+    margin-left: 25%;
+    width: 50%;
+    margin-bottom: 50px;
 }
 
 </style>

@@ -1,10 +1,12 @@
-<template> 
+<template>
+    <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;"> Utilisation d'Iframe</h2>
     <div class="container">
         <Video video="https://www.youtube.com/embed/1AiToLn3USQ" />
     </div>
     <!-- <div class="container" style="background-color: #BED3C3;">
         <Git url="https://api.github.com/repos/valentingozillon/VueWeb"/>
     </div> -->
+    <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;"> JSON local avec Prime vue</h2>
     <div class="container" style="background-color: #4A919E;">
         <Json/>
     </div>
@@ -35,13 +37,6 @@ export default {
     margin-left: 5%;
 }
 
-.video {
-    margin-left: 20%;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 60%;
-    height: 400px;
-}
+
 
 </style>

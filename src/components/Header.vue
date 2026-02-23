@@ -4,6 +4,7 @@
     <a>{{Name}}</a>
     <div class="header-right">
       <router-link to="/" class="marg">Home</router-link>
+      <router-link to="/Library" class="marg">Library</router-link>
       <router-link to="/About" class="marg">About</router-link>
     </div>
   </div>

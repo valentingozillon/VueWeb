@@ -12,8 +12,8 @@
         </h3>
         <h2>Parcours académique</h2>
         <div class="school">
-            <img src="../assets/tudub.jpg" style="width: 20%; padding-left: 20%; padding-right: 20%;"/>
-            <img src="../assets/epitech.png" style="width: 20%;"/>
+            <img src="../assets/tudub.jpg"/>
+            <img src="../assets/epitech.png"/>
         </div>
         <h3>
             Epitech – Programme Grande École (Bac +5)
@@ -24,9 +24,9 @@
         </h3>
         <h2>Expériences professionnelles</h2>
         <div class="school">
-            <img src="../assets/enginest.jpg" style="width: 20%; padding-left: 5%; padding-right: 15%;"/>
-            <img src="../assets/five.png" style="width: 20%; padding-right: 15%;"/>
-            <img src="../assets/sogeti.jpg" style="width: 20%;"/>
+            <img src="../assets/enginest.jpg"/>
+            <img src="../assets/five.png"/>
+            <img src="../assets/sogeti.jpg"/>
         </div>
         <h3>
             Enginest – Startup d’applications (Stage de 6 mois)
@@ -95,8 +95,15 @@ h3 {
 }
 
 .school {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.school img {
+  width: 200px;
+  max-width: 20%;
 }
 
 </style>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import Home from "../views/Home.vue"
 import About from "../views/About.vue"
+import Library from "@/views/library.vue"
 
 const routes = [
     {
@@ -12,11 +13,16 @@ const routes = [
         path: '/About',
         name: 'About',
         component: About
+    },
+    {
+        path: '/Library',
+        name: 'Library',
+        component: Library
     }
 ]
 
 const router = createRouter({
-    history: createWebHistory(process.env.Base_URL),
+    history: createWebHistory(),
     routes
 })
 

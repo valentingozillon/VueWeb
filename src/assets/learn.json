@@ -1,0 +1,31 @@
+
+[    
+        {
+            "type":"dark mode?",
+            "status":"futur"
+        },
+        {
+            "type":"api open weather",
+            "status":"futur"
+        },
+        {
+            "type":"github API",
+            "status":"en cours" 
+        },
+        {
+            "type":"JSON local",
+            "status":"finis"
+        },
+        {
+            "type":"utilisation de axios",
+            "status":"en cours"
+        },
+        {
+            "type":"base de vue 3",
+            "status":"finis"
+        },
+        {
+            "type":"Vue Router",
+            "status":"finis"
+        }
+    ]

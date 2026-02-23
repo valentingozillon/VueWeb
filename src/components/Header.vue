@@ -3,9 +3,9 @@
     <img src="../assets/logo.png" class="logo"/>
     <a>{{Name}}</a>
     <div class="header-right">
-      <router-link to="/" class="marg">Home</router-link>
-      <router-link to="/Library" class="marg">Library</router-link>
-      <router-link to="/About" class="marg">About</router-link>
+      <router-link to="/" class="marg">Accueil</router-link>
+      <router-link to="/Library" class="marg">Information</router-link>
+      <router-link to="/About" class="marg">À propos</router-link>
     </div>
   </div>
 </template>

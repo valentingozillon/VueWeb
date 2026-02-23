@@ -10,7 +10,7 @@
         },
         {
             "type":"github API",
-            "status":"en cours" 
+            "status":"finis" 
         },
         {
             "type":"JSON local",
@@ -30,7 +30,7 @@
         },
         {
             "type":"page Home",
-            "status":"en cours"
+            "status":"finis"
         },
         {
             "type":"Vue Router",

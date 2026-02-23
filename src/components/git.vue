@@ -1,5 +1,5 @@
 <template> 
-    <div v-if="repo">
+    <div v-if="repo && langs && com">
         <h1 class="title">Github API</h1>
         <div style="display: flex;">
             <div style="width: 50%; margin-top: 75px;">
@@ -18,7 +18,7 @@
                     <Panel toggleable style="margin-bottom: 25px;">
                         <template #header>
                             <div class="flex items-center gap-2">
-                                <span class="font-bold">{{ value.commit.message }}</span>
+                                <span class="font-bold">{{ value.commit.message.split('\n\n')[0] }}</span>
                             </div>
                         </template>
                         <Divider/>
@@ -34,9 +34,10 @@
                             </div>
                         </template>
                         <p>
-                            {{ value.commit.author.name }}
+                            {{ value.commit.author.name }} :
                         </p>
                         <p>
+                            {{ value.commit.message.split('\n\n')[1] }}
                         </p>
                     </Panel>
                 </template>
@@ -67,9 +68,9 @@ export default {
     },
     data() {
         return {
-            repo: Repo,
-            langs: Lang,
-            com: Com,
+            repo: null,
+            langs: null,
+            com: null,
             chartData: null,
         };
     },
@@ -97,9 +98,9 @@ export default {
                 hour: 'numeric'
             })
         }
-    }
+    },
 
-    /*created: function() {
+    created: function() {
         axios.get(this.url).then((result) => {
             this.repo = result.data
         }).catch((err) => {
@@ -110,7 +111,12 @@ export default {
         }).catch((err) => {
             console.log(err)
         });
-    },*/
+        axios.get((this.url + "/commits")).then((result3) => {
+            this.com = result3.data
+        }).catch((err) => {
+            console.log(err)
+        });
+    },
 }
 </script>
 

@@ -37,7 +37,7 @@ export default {
   methods: {
     getSeverity(status) {
             switch (status) {
-                case 'finis':
+                case 'fini':
                     return 'success';
 
                 case 'en cours':

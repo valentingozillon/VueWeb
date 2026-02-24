@@ -10,11 +10,11 @@
         },
         {
             "type":"github API",
-            "status":"finis" 
+            "status":"fini" 
         },
         {
             "type":"JSON local",
-            "status":"finis"
+            "status":"fini"
         },
         {
             "type":"utilisation de axios",
@@ -22,26 +22,26 @@
         },
         {
             "type":"base de vue 3",
-            "status":"finis"
+            "status":"fini"
         },
         {
             "type":"page About",
-            "status":"finis"
+            "status":"fini"
         },
         {
             "type":"page Home",
-            "status":"finis"
+            "status":"fini"
         },
         {
             "type":"Vue Router",
-            "status":"finis"
+            "status":"fini"
         },
         {
             "type":"Création du projet",
-            "status":"finis"
+            "status":"fini"
         },
         {
             "type":"Mise en place d'un repo Github",
-            "status":"finis"
+            "status":"fini"
         }
     ]

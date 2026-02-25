@@ -1,7 +1,7 @@
 <template> 
     <h1 style="font-family: Arial, Helvetica, sans-serif;">À propos</h1>
     <div class="content">
-        <h2 class="title">résentation courte</h2>
+        <h2 class="title">Présentation courte</h2>
         <img src="../assets/valentin.jpg" class="pics"/>
         <h3>
             Je suis Valentin Gozillon, développeur full stack diplômé d’Epitech (Bac +5), avec une spécialisation en Data Analyst à TU Dublin. 
